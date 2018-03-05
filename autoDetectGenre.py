@@ -35,6 +35,11 @@ def validate_arguments():
     if json not in argv[2] and csv not in argv[2]:
         print_error(3)
 
+    if csv in argv[1] and csv in argv[2]:
+        print_error(4)
+    if json in argv[1] and json in argv[2]:
+        print_error(5)
+
     if json in argv[1] and csv in argv[2]:
         return argv[1], argv[2]
     return argv[2], argv[1]
